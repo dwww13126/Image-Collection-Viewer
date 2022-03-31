@@ -83,7 +83,6 @@
                 currentImageURL = arguments[currentDrawn]
                 //Creates a "a" ellement for which the photo needs to be added to
                 var link = document.createElement("a");
-
                 //Creates a image ellement for which the photo needs to be added to
                 var image = document.createElement("img");
                 //Creates a p ellement for adding the category to

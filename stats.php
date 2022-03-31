@@ -39,25 +39,24 @@
 			while($row = mysqli_fetch_assoc($result))
 			{
 				if ($row['favorite'] == 1){
-					if ($row['label'] == 0){
+					if ($row['category'] == 0){
 						$cat0Sad++; }
-					else if ($row['label'] == 1){
+					else if ($row['category'] == 1){
 						$cat1Happy++; }
-					else if ($row['label'] == 2){
+					else if ($row['category'] == 2){
 						$cat2Grumpy++; }
-					else if ($row['label'] == 3){
+					else if ($row['category'] == 3){
 						$cat3Cute++; }
-					else if ($row['label'] == 4){
+					else if ($row['category'] == 4){
 						$cat4Strong++; }
-					else if ($row['label'] == 5){
+					else if ($row['category'] == 5){
 						$cat5Abnormal++; }
-					else if ($row['label'] == 6){
+					else if ($row['category'] == 6){
 						$cat6Playing++; }
-					else if ($row['label'] == 7){
+					else if ($row['category'] == 7){
 						$cat7Food++; }
 				}
 			}
-      ("Sad", "Happy", "Grumpy", "Cute", "Strong", "Abnormal", "Playing", "Food");
 			echo "['Sad', ".$cat0Sad."],
           ['Happy', ".$cat1Happy."],
           ['Grumpy', ".$cat2Grumpy."],
