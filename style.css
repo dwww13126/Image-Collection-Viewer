@@ -1,43 +1,13 @@
 
 /* Sets the background colour of the page */
 body {
-  background-color: #471002;
+  background-color: black;
+  color: white;
 }
-
-/* is used to be able to center ellements */
-.center {
-  text-align: center;
-}
-
-/*  is used to be able to set the formating of the images */
-img {
-  border-radius : 8px;
-  padding : 2px;
-  border-color : black;
-  border-width : 4px;
-  border-style : solid;
-  margin-right: auto;
-  margin-left: auto;
-  height: auto;
-  display: block;
-  width: 100%;
-}
-
-/* Is used to style the main webpage heading */
-.pageHeading {
-  font-family:  "Georgia", serif;
-  font-size: 36pt;
-  color: White;
-  margin-right: 25px;
-  margin-left: 25px;
-  text-align: center;
-}
-
 
 /* Is used to be able to setup formatting of all ellements inside divs */
 div {
   font-family: "Times New Roman", serif;
-  color:  White;
   font-size: 20pt;
   display: block;
   margin-bottom: 50px;
@@ -46,8 +16,35 @@ div {
   width: auto;
 }
 
-.radioButtons {
-    font-size: 35px;
+/* Is used to be able to setup the formatting of the text inside the text area */
+div textArea {
+  font-size: 35px;
+  display: block;
+}
+
+/*  is used to be able to set the formating of the images */
+img {
+  border-radius : 32px;
+  padding : 2px;
+  margin-right: auto;
+  margin-left: auto;
+  height: auto;
+  display: block;
+  width: 100%;
+  border-style: none;
+}
+
+/* Is used to be able to setup the formatting of the text inside the input area */
+input {
+  font-size: 25px;
+}
+
+p {
+  font-family: "Times New Roman", serif;
+  font-size: 18pt;
+  color: White;
+  margin-right: 50px;
+  margin-left: 50px;
 }
 
 /* Is used to be able to setup the formatting of the buttons used */
@@ -55,11 +52,14 @@ button {
   font-family:  "Georgia", serif;
   height: auto;
   width: auto;
-  font-size: 36px;
+  font-size: 25px;
   display: inline-block;
   margin-top: 30pt;
   margin-bottom: 30pt;
   text-align: center;
+  border-radius: 16px;
+  border: none;
+  outline:none;
 }
 
 button.reloadImages {
@@ -106,23 +106,22 @@ button.browsePhotosStats {
 	margin-left: 20%;
 }
 
-
-/* Is used to be able to setup the formatting of the text inside the text area */
-div textArea {
-  font-size: 55px;
-  display: block;
-
+/* is used to be able to center ellements */
+.center {
+  text-align: center;
 }
 
-/* Is used to be able to setup the formatting of the text inside the input area */
-input {
-  font-size: 55px;
+/* is used to be able to center the image grids */
+.container {
+  padding-left: 25%;
+  padding-right: 25%;
 }
 
-p {
-  font-family: "Times New Roman", serif;
-  font-size: 25pt;
+/* Is used to style the main webpage heading */
+.pageHeading {
+  font-family:  "Georgia", serif;
   color: White;
-  margin-right: 50px;
-  margin-left: 50px;
+  margin-right: 25px;
+  margin-left: 25px;
+  text-align: center;
 }

@@ -74,7 +74,7 @@
           ,chartArea:{left:0,top:0,width:"100%",height:"100%"}
           ,height: 800
           ,width: 1000
-          ,backgroundColor: '#471002'
+          ,backgroundColor: 'black'
           ,legendTextStyle: {
             fontName: 'Times-Roman',
             fontSize: 18,
@@ -92,9 +92,11 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <!--Div that will hold the pie chart-->
-      <button type="button" class="favoritedImagesStats" onclick="location.href = 'favorite.php';" >Favorited Images:</button>
-      <button type="button" class="browsePhotosStats" onclick="location.href = 'index.php';" >Browse Images:</button>
-    <div id="chart_div"></div>
+    <div class="container">
+      <button type="button" class="favoritedImagesStats" onclick="location.href = 'favorite.php';" >Favorited:</button>
+      <button type="button" class="browsePhotosStats" onclick="location.href = 'index.php';" >Browse:</button>
+      <!--Div that will hold the pie chart-->
+      <div id="chart_div"></div>
+    </div>
   </body>
 </html>
