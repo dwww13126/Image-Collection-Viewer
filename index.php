@@ -20,34 +20,31 @@
 		}
 
 		$query = "SELECT * FROM `cat-images` ORDER BY RAND()";
-	    $result = mysqli_query($conn, $query);
+    $result = mysqli_query($conn, $query);
+		$categorys = array("Sad", "Happy", "Grumpy", "Cute", "Strong", "Abnormal", "Playing", "Food");
 		$count = 0;
-	    if($result)
-		while($row = mysqli_fetch_assoc($result))
-		{
-			if (($row['favorite'] == 0)&&($count <= 9)){
-				echo "'http://localhost/myImages/";
-				echo $row['filename'];
-				echo "', '";
-				if ($row['category'] == ""){
-					$label =  $row['label'];
-					$categorys = array("Sad", "Happy", "Grumpy", "Cute", "Strong", "Abnormal", "Playing", "Food");
-					echo $categorys[$label];
-				}
-				else {
-					echo $row['category'];
-				}
-				if ($count != 9){
-					echo "', ";
-				}
-				else {
-					echo "'";
-				}
-				$count++;
-			}
-		}
-	    else
-		die("Error in database query");
+    if($result) {
+      while($row = mysqli_fetch_assoc($result))
+      {
+        if (($row['favorite'] == 0)&&($count <= 9)){
+          echo "'http://localhost/myImages/";
+          echo $row['filename'];
+          echo "', '";
+          $label =  $row['category'];
+          echo $categorys[$label];
+          if ($count != 9){
+            echo "', ";
+          }
+          else {
+            echo "'";
+          }
+          $count++;
+        }
+      }
+    }
+    else {
+  		die("Error in database query");
+    }
 	    mysqli_close($conn); ?>);">
       <script>
         //Is a function which takes in a array of images to create

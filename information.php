@@ -18,7 +18,7 @@
             $result = mysqli_query($conn, $query);
             if($result){
           	$row = mysqli_fetch_assoc($result);
-          	echo "\"".$row['filename']."\", \"".$row['favorite']."\", \"".$row['category']."\", \"".$row['comment']."\", \"".$row['rating']."\"";
+          	echo "\"".$row['filename']."\", \"".$row['favorite']."\", ".$row['category'].", \"".$row['comment']."\", \"".$row['rating']."\"";
           } ?>];
           //For each of the different values in the array, set them to be the relevent values in the page fields
 
@@ -30,15 +30,8 @@
           else{
             favorited.value="1";
           }
-          if(information[2] == ""){
-            document.getElementById("categoryField").value = catergorys[information[0]];
-          }
-          else{
-            document.getElementById("categoryField").value = information[2];
-          }
-          if(information[3] != ""){
-            document.getElementById("commentField").value = information[3];
-          }
+          document.getElementById("categoryField").value = catergorys[information[2]];
+          document.getElementById("commentField").value = information[3];
           if(information[4] != "0"){
             var rating = imageInfo.rating;
             rating.value=information[4];
