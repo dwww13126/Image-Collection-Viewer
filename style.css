@@ -3,12 +3,12 @@
 body {
   background-color: black;
   color: white;
+  font-size: 20pt;
 }
 
 /* Is used to be able to setup formatting of all ellements inside divs */
 div {
   font-family: "Times New Roman", serif;
-  font-size: 20pt;
   display: block;
   margin-bottom: 50px;
   margin-left: auto;
@@ -34,8 +34,8 @@ img {
   border-style: none;
 }
 
-/* Is used to be able to setup the formatting of the text inside the input area */
-input {
+/* Is used to be able to setup the formatting of the text inside the input areas */
+input, select {
   font-size: 25px;
 }
 
@@ -45,6 +45,7 @@ p {
   color: White;
   margin-right: 50px;
   margin-left: 50px;
+  margin-top: 10px;
 }
 
 /* Is used to be able to setup the formatting of the buttons used */
@@ -59,51 +60,43 @@ button {
   text-align: center;
   border-radius: 16px;
   border: none;
-  outline:none;
+  outline: none;
+  margin-left: 10px;
 }
 
 button.reloadImages {
     background: Red;
-    margin-left: 13%;
 }
 
 button.favoritedImagesInfo {
     background: Green;
-    margin-left: 17%;
 }
 
 button.validButtonInfo {
   background: Yellow;
-  margin-left: 17%;
 }
 
 button.favoritedImages {
     background: Green;
-    margin-left: 13%;
 }
 
 button.statsButton {
     background: Yellow;
-    margin-left: 23%;
 }
 
 button.statsButtonMain {
     background: Yellow;
-    margin-left: 13%;
 }
 
 button.browsePhotos {
     background: Orange;
-    margin-left: 23%;
 }
 
 button.favoritedImagesStats {
 	background: Green;
-	margin-left: 20%;
 }
 button.browsePhotosStats {
 	background: Orange;
-	margin-left: 20%;
 }
 
 /* is used to be able to center ellements */
@@ -124,4 +117,11 @@ button.browsePhotosStats {
   margin-right: 25px;
   margin-left: 25px;
   text-align: center;
+}
+
+.buttonSVG {
+  height: 25px;
+  width: auto;
+  padding: 2px;
+  margin: 0px;
 }

@@ -34,8 +34,17 @@
           		}?>"/>
             </fieldset>
             <fieldset>
-              <legend class="infoFieldLabel">Category:</legend>
-              <input type="text" name="category" id="categoryField"/>
+              <legend class="categoryLabel">Category:</legend>
+              <select name="category" id="categoryField">
+                <option value="0">Sad</option>
+                <option value="1">Happy</option>
+                <option value="2">Grumpy</option>
+                <option value="3">Cute</option>
+                <option value="4">Strong</option>
+                <option value="5">Abnormal</option>
+                <option value="6">Playing</option>
+                <option value="7">Food</option>
+              </select>
               <p id="categoryMessage"></p>
             </fieldset>
             <fieldset>
@@ -90,8 +99,8 @@
               </label>
             </fieldset>
           </fieldset>
-          <button type="button" class="validButtonInfo" id="validButtonInfo" onclick="validateUserInput();">Save Changes:</button>
-            <button type="button" class="favoritedImagesInfo" onclick="location.href = 'favorite.php';" >Favorited Images:</button>
+            <button type="button" class="validButtonInfo" id="validButtonInfo" onclick="validateUserInput();">Save:</button>
+            <button type="button" class="favoritedImagesInfo" onclick="location.href = 'index.php';" >Browse Images:</button>
         </div>
       </form>
       </div>

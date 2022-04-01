@@ -86,7 +86,7 @@
     var browsePhotos = document.createElement("button");
     //Creates the buttons used to be able to go to the favorited images
     var statsButton = document.createElement("button");
-    browsePhotos.innerHTML = "Browse:";
+    browsePhotos.innerHTML = "Browse Images:";
     statsButton.innerHTML = "Stats:";
     statsButton.className = "statsButton";
     browsePhotos.className = "browsePhotos";
@@ -185,23 +185,18 @@
     var reloadButton = document.createElement("button");
     //Creates the buttons used to be able to go to the favorited images
     var favImageButton = document.createElement("button");
-    var statsButton = document.createElement("button");
-    reloadButton.innerHTML = "Reload:"
-    favImageButton.innerHTML = "Favorited:"
+    reloadButton.innerHTML = "Reload Selection:"
+    favImageButton.innerHTML = "View Favorited:"
     favImageButton.className = "favoritedImages";
     reloadButton.className = "reloadImages";
-    statsButton.innerHTML = "Stats:";
-    statsButton.className = "statsButtonMain";
     var header = document.createElement("h1");
     header.className = "pageHeading";
     header.innerHTML = "Cat Images:";
-    statsButton.setAttribute("onclick", "location.href='stats.php'");
     favImageButton.setAttribute("onclick", "location.href='favorite.php'");
     reloadButton.setAttribute("onclick", "location.href='index.php'");
     container.appendChild(header);
     container.appendChild(reloadButton);
     container.appendChild(favImageButton);
-    container.appendChild(statsButton);
     //Append table to the container
     container.appendChild(table);
   }
@@ -209,11 +204,10 @@
   //Is used to be able to setup all the values
   function readDataBaseInfomation(favorite, category, comment, rating) {
     var imageInfo = document.getElementById("imageInfo");
-    var catergorys = ["Sad", "Happy", "Grumpy", "Cute", "Strong", "Abnormal", "Playing", "Food"];
     //Sets each of the different inputs on the page
     document.getElementsByName("favorite")[favorite].setAttribute("checked", "");
     imageInfo.favorite = favorite;
-    document.getElementById("categoryField").value = catergorys[category];
+    document.getElementById("categoryField").value = category;
     document.getElementById("commentField").value = comment;
     if(rating != 0){
       var rating = imageInfo.rating;

@@ -1,6 +1,6 @@
 <html>
   <head>
-	<title>Stats:</title>
+	<title>Image Stats:</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
 
@@ -70,7 +70,7 @@
 	    mysqli_close($conn); ?>]);
 
         options = {
-          title: 'Stats:'
+          title: 'Image Stats:'
           ,chartArea:{left:0,top:0,width:"100%",height:"100%"}
           ,height: 800
           ,width: 1000
@@ -93,8 +93,8 @@
   </head>
   <body>
     <div class="container">
-      <button type="button" class="favoritedImagesStats" onclick="location.href = 'favorite.php';" >Favorited:</button>
-      <button type="button" class="browsePhotosStats" onclick="location.href = 'index.php';" >Browse:</button>
+      <button type="button" class="browsePhotosStats" onclick="location.href = 'index.php';" >Browse Images:</button>
+      <button type="button" class="favoritedImagesStats" onclick="location.href = 'favorite.php';" >View Favorited:</button>
       <!--Div that will hold the pie chart-->
       <div id="chart_div"></div>
     </div>
