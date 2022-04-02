@@ -70,6 +70,13 @@
       //Appends the row to the table
       table.appendChild(tableRow);
     }
+    //Creates a number of flexbox divs for storing the different ellements
+    var flexboxContainerButtons = document.createElement("div");
+    flexboxContainerButtons.className  = "flexbox-container";
+    var flexboxContainerHeader = document.createElement("div");
+    flexboxContainerHeader.className  = "flexbox-container";
+    var flexboxContainerTable = document.createElement("div");
+    flexboxContainerTable.className  = "flexbox-container";
     //Creates the buttons used to be able to reload a different set of images
     var browsePhotos = document.createElement("button");
     //Creates the buttons used to be able to go to the favorited images
@@ -83,11 +90,15 @@
     var header = document.createElement("h1");
     header.className = "pageHeading";
     header.innerHTML = "Favorite Images:";
-    container.appendChild(header);
-    container.appendChild(browsePhotos);
-    container.appendChild(statsButton);
+    //Appends the different ellements to the flexbox divs
+    flexboxContainerButtons.appendChild(browsePhotos);
+    flexboxContainerButtons.appendChild(statsButton);
+    flexboxContainerHeader.appendChild(header);
+    flexboxContainerTable.appendChild(table);
+    container.appendChild(flexboxContainerHeader);
+    container.appendChild(flexboxContainerButtons);
     //Append table to the container
-    container.appendChild(table);
+    container.appendChild(flexboxContainerTable);
   }
 
   //Is a function which takes in a array of images to create
@@ -169,6 +180,13 @@
       //Appends the row to the table
       table.appendChild(tableRow);
     }
+    //Creates a number of flexbox divs for storing the different ellements
+    var flexboxContainerButtons = document.createElement("div");
+    flexboxContainerButtons.className  = "flexbox-container";
+    var flexboxContainerHeader = document.createElement("div");
+    flexboxContainerHeader.className  = "flexbox-container";
+    var flexboxContainerTable = document.createElement("div");
+    flexboxContainerTable.className  = "flexbox-container";
     //Creates the buttons used to be able to reload a different set of images
     var reloadButton = document.createElement("button");
     //Creates the buttons used to be able to go to the favorited images
@@ -182,11 +200,15 @@
     header.innerHTML = "Cat Images:";
     favImageButton.setAttribute("onclick", "location.href='favorite.php'");
     reloadButton.setAttribute("onclick", "location.href='index.php'");
-    container.appendChild(header);
-    container.appendChild(favImageButton);
-    container.appendChild(reloadButton);
+    //Appends the different ellements to the flexbox divs
+    flexboxContainerButtons.appendChild(favImageButton);
+    flexboxContainerButtons.appendChild(reloadButton);
+    flexboxContainerHeader.appendChild(header);
+    flexboxContainerTable.appendChild(table);
+    container.appendChild(flexboxContainerHeader);
+    container.appendChild(flexboxContainerButtons);
     //Append table to the container
-    container.appendChild(table);
+    container.appendChild(flexboxContainerTable);
   }
 
   //Is used to be able to setup all the values

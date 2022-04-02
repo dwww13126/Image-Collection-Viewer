@@ -68,17 +68,13 @@
 	    mysqli_close($conn); ?>]);
 
         options = {
-          title: 'Image Stats:'
-          ,chartArea:{left:0,top:0,width:"100%",height:"100%"}
-          ,height: 800
+          height: 500
           ,width: 1000
           ,backgroundColor: 'black'
           ,legendTextStyle: {
-            fontName: 'Times-Roman',
+            fontName: 'Times-New-Roman',
             fontSize: 18,
-            bold: true,
-            color: 'white',
-            auraColor: '#000000'
+            color: 'white'
           }
         };
 
@@ -90,11 +86,14 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <div class="container">
+    <div class="flexbox-container">
+      <h1 class="pageHeading">Image Stats:</h1>
+    </div>
+    <div class="flexbox-container">
       <button type="button" class="browsePhotos" onclick="location.href = 'index.php';" >Browse Images:</button>
       <button type="button" class="favoritedImages" onclick="location.href = 'favorite.php';" >View Favorited:</button>
-      <!--Div that will hold the pie chart-->
-      <div id="chart_div"></div>
     </div>
+    <!--Div that will hold the pie chart-->
+    <div class="flexbox-container" id="chart_div"></div>
   </body>
 </html>

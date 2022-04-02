@@ -5,8 +5,6 @@
         <title>Cat Images:</title>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-
-
     <body onload="NewImageGrid(<?php
 	    require_once('dbConnect.php');
 	    if($conn == FALSE)
