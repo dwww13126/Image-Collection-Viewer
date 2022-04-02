@@ -11,22 +11,20 @@
 	    require_once('dbConnect.php');
 	    if($conn == FALSE)
 		die("Error connecting to mysql server :". mysqli_connect_error());
-		if($_GET){
+		if($_POST){
 			$favoriteOption = "0";
-			$favGet = str_replace(' ', '', $_GET['favorite']);
-			if ($favGet == 'Yes') $favoriteOption = "1";
-			$query = "UPDATE `cat-images` SET `category` = '".$_GET['category']."', `comment` = '".$_GET['comment']."', `rating` = '".$_GET['rating']."', `favorite` = ".$_GET['favorite']." WHERE `filename`='".$_GET['filename']."';";
+			$query = "UPDATE `cat-images` SET `category` = '".$_POST['category']."', `comment` = '".$_POST['comment']."', `rating` = '".$_POST['rating']."', `favorite` = ".$_POST['favorite']." WHERE `filename`='".$_POST['filename']."';";
 	    $result = mysqli_query($conn, $query);
 		}
 
-		$query = "SELECT * FROM `cat-images` ORDER BY RAND()";
+		$query = "SELECT * FROM `cat-images` where `favorite` = 0 ORDER BY RAND()";
     $result = mysqli_query($conn, $query);
 		$categorys = array("Sad", "Happy", "Grumpy", "Cute", "Strong", "Abnormal", "Playing", "Food");
 		$count = 0;
     if($result) {
       while($row = mysqli_fetch_assoc($result))
       {
-        if (($row['favorite'] == 0)&&($count <= 9)){
+        if ($count <= 9){
           echo "'http://localhost/myImages/";
           echo $row['filename'];
           echo "', '";

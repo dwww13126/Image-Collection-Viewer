@@ -24,7 +24,7 @@
 	    require_once('dbConnect.php');
 	    if($conn == FALSE)
 		die("Error connecting to mysql server :". mysqli_connect_error());
-		$query = "SELECT * FROM `cat-images`";
+		$query = "SELECT * FROM `cat-images` where `favorite` = 1";
 	    $result = mysqli_query($conn, $query);
 		$count = 0;
 	    if($result){
@@ -38,24 +38,22 @@
 			$cat7Food = 0;
 			while($row = mysqli_fetch_assoc($result))
 			{
-				if ($row['favorite'] == 1){
-					if ($row['category'] == 0){
-						$cat0Sad++; }
-					else if ($row['category'] == 1){
-						$cat1Happy++; }
-					else if ($row['category'] == 2){
-						$cat2Grumpy++; }
-					else if ($row['category'] == 3){
-						$cat3Cute++; }
-					else if ($row['category'] == 4){
-						$cat4Strong++; }
-					else if ($row['category'] == 5){
-						$cat5Abnormal++; }
-					else if ($row['category'] == 6){
-						$cat6Playing++; }
-					else if ($row['category'] == 7){
-						$cat7Food++; }
-				}
+				if ($row['category'] == 0){
+					$cat0Sad++; }
+				else if ($row['category'] == 1){
+					$cat1Happy++; }
+				else if ($row['category'] == 2){
+					$cat2Grumpy++; }
+				else if ($row['category'] == 3){
+					$cat3Cute++; }
+				else if ($row['category'] == 4){
+					$cat4Strong++; }
+				else if ($row['category'] == 5){
+					$cat5Abnormal++; }
+				else if ($row['category'] == 6){
+					$cat6Playing++; }
+				else if ($row['category'] == 7){
+					$cat7Food++; }
 			}
 			echo "['Sad', ".$cat0Sad."],
           ['Happy', ".$cat1Happy."],
@@ -93,8 +91,8 @@
   </head>
   <body>
     <div class="container">
-      <button type="button" class="browsePhotosStats" onclick="location.href = 'index.php';" >Browse Images:</button>
-      <button type="button" class="favoritedImagesStats" onclick="location.href = 'favorite.php';" >View Favorited:</button>
+      <button type="button" class="browsePhotos" onclick="location.href = 'index.php';" >Browse Images:</button>
+      <button type="button" class="favoritedImages" onclick="location.href = 'favorite.php';" >View Favorited:</button>
       <!--Div that will hold the pie chart-->
       <div id="chart_div"></div>
     </div>

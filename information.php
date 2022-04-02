@@ -10,16 +10,16 @@
     if($conn == FALSE) {
     die("Error connecting to mysql server :". mysqli_connect_error());
     }
-    $query = "SELECT * FROM `cat-images` WHERE `filename` = '".$_GET['image']."'";
+      //Checks if the
+      $query = "SELECT * FROM `cat-images` WHERE `filename` = '".$_GET['image']."'";
       $result = mysqli_query($conn, $query);
       if($result){
-      $row = mysqli_fetch_assoc($result);
-      echo $row['favorite'].", ".$row['category'].", '".$row['comment']."', ".$row['rating']."";
-    } ?>);">
+        $row = mysqli_fetch_assoc($result);
+        echo $row['favorite'].", ".$row['category'].", '".$row['comment']."', ".$row['rating']."";
+      } ?>);">
     <div class="container">
-      <h1 class="pageHeading">Image Information:</h1>
-      <form action="index.php" method="send" id="imageInfo">
-        <div class="imageInfomationDiv">
+      <form action="index.php" method="post" id="imageInfo">
+        <div class="imageInformationDiv">
           <fieldset>
             <img id="First" class="infoImage" src="
             <?php if (isset($_GET['image'])) {
@@ -28,7 +28,7 @@
               echo '.png';
         		}?>" alt="Selected Image">
             <fieldset>
-              <legend class="infoFieldLabel">FileName:</legend>
+              <legend class="infoFieldLabel">File Name:</legend>
               <input type="text" readonly="readonly" name="filename" id="filename" value="<?php if (isset($_GET['image'])) {
                echo $_GET['image'];
           		}?>"/>
@@ -98,9 +98,9 @@
                 <input type="radio" name="rating" value="10">10
               </label>
             </fieldset>
+            <button type="button" class="favoritedImagesInfo" onclick="location.href = 'index.php';" >Return:</button>
+            <button type="button" class="saveInfo" id="saveInfo" onclick="validateUserInput();">Save:</button>
           </fieldset>
-            <button type="button" class="validButtonInfo" id="validButtonInfo" onclick="validateUserInput();">Save:</button>
-            <button type="button" class="favoritedImagesInfo" onclick="location.href = 'index.php';" >Browse Images:</button>
         </div>
       </form>
       </div>

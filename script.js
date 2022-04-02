@@ -43,35 +43,23 @@
           var screenw = (screen.width / 2) / 3;
           image.style.height= screenw - 30 + "px";
           image.style.width= screenw - 30 + "px";
-          //Sets the src property of the image to be the current image url
-          image.setAttribute("src", currentImageURL+".png");
           var imageName = currentImageURL.replace('http://localhost/myImages/', '');
           //Sets the alt property of the image to be the current image url
           image.setAttribute("alt", imageName);
           comment.innerHTML = arguments[currentDrawn + 1];
-          //Add the image to the current table data
-          link.href = "information.php?image=" + imageName;
           if (arguments[currentDrawn] != "No Image Favorited") {
+            //Sets the src property of the image to be the current image url
+            image.setAttribute("src", currentImageURL+".png");
+            //Add the image to the current table data
+            link.href = "information.php?image=" + imageName;
             link.appendChild(image);
             tableData.appendChild(link);
           }
           else{
+            image.setAttribute("src", "http://localhost/ImageViewer/no-image.png");
             tableData.appendChild(image);
           }
           tableData.appendChild(comment);
-        }
-        //If all images have been drawn from the array then draw a blank square
-        //to make up the position in the grid
-        else {
-          //Creates a div which is formated to be a 100 by 100 square
-          var square = document.createElement("div");
-          //Sets the height and width properties of the square so it
-          //fits inside the grid properly and sets up a border.
-          image.style.height="355px";
-          image.style.width="355px";
-          square.style.border="solid";
-          //Add the square to the current table data
-          tableData.appendChild(square);
         }
         //Adds the square to the current row
         tableRow.appendChild(tableData);
@@ -87,7 +75,7 @@
     //Creates the buttons used to be able to go to the favorited images
     var statsButton = document.createElement("button");
     browsePhotos.innerHTML = "Browse Images:";
-    statsButton.innerHTML = "Stats:";
+    statsButton.innerHTML = "Image Stats:";
     statsButton.className = "statsButton";
     browsePhotos.className = "browsePhotos";
     statsButton.setAttribute("onclick", "location.href='stats.php'");
@@ -185,7 +173,7 @@
     var reloadButton = document.createElement("button");
     //Creates the buttons used to be able to go to the favorited images
     var favImageButton = document.createElement("button");
-    reloadButton.innerHTML = "Reload Selection:"
+    reloadButton.innerHTML = "Reload Grid:"
     favImageButton.innerHTML = "View Favorited:"
     favImageButton.className = "favoritedImages";
     reloadButton.className = "reloadImages";
@@ -195,8 +183,8 @@
     favImageButton.setAttribute("onclick", "location.href='favorite.php'");
     reloadButton.setAttribute("onclick", "location.href='index.php'");
     container.appendChild(header);
-    container.appendChild(reloadButton);
     container.appendChild(favImageButton);
+    container.appendChild(reloadButton);
     //Append table to the container
     container.appendChild(table);
   }

@@ -9,14 +9,14 @@
       require_once('dbConnect.php');
 	    if($conn == FALSE)
 		die("Error connecting to mysql server :". mysqli_connect_error());
-		$query = "SELECT * FROM `cat-images`";
+		$query = "SELECT * FROM `cat-images` WHERE `favorite` = 1";
     $result = mysqli_query($conn, $query);
 		$categorys = array("Sad", "Happy", "Grumpy", "Cute", "Strong", "Abnormal", "Playing", "Food");
 		$count = 0;
 	    if($result)
 			while($row = mysqli_fetch_assoc($result))
 			{
-				if (($row['favorite'] == 1)&&($count <= 9)){
+				if ($count <= 9){
 					echo "'http://localhost/myImages/";
 					echo $row['filename'];
           echo "', '";
