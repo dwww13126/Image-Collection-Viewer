@@ -190,13 +190,19 @@
   }
 
   //Is used to be able to setup all the values
-  function readDataBaseInfomation(favorite, category, comment, rating) {
+  function readDataBaseInformation(favorite, category, comment, rating, current) {
     var imageInfo = document.getElementById("imageInfo");
     //Sets each of the different inputs on the page
+
     document.getElementsByName("favorite")[favorite].setAttribute("checked", "");
     imageInfo.favorite = favorite;
     document.getElementById("categoryField").value = category;
     document.getElementById("commentField").value = comment;
+    //Checks if maxReached value is greater than or equal to 9
+    //meaning that a user can remove from being favorite
+    if(current >= 9){
+        document.getElementsByName("favorite")[1].disabled  = true;
+    }
     if(rating != 0){
       var rating = imageInfo.rating;
       rating.value = rating;

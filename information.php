@@ -5,17 +5,23 @@
         <title>Information</title>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body onload="readDataBaseInfomation(<?php
+    <body onload="readDataBaseInformation(<?php
     require_once('dbConnect.php');
     if($conn == FALSE) {
     die("Error connecting to mysql server :". mysqli_connect_error());
     }
-      //Checks if the
       $query = "SELECT * FROM `cat-images` WHERE `filename` = '".$_GET['image']."'";
       $result = mysqli_query($conn, $query);
       if($result){
         $row = mysqli_fetch_assoc($result);
-        echo $row['favorite'].", ".$row['category'].", '".$row['comment']."', ".$row['rating']."";
+        echo $row['favorite'].", ".$row['category'].", '".$row['comment']."', ".$row['rating'].",";
+        //Checks if the number of favorited images more than 8
+        //meaning that the use will need to remove one before adding any more
+        $query = "SELECT * FROM `cat-images` WHERE `favorite` = 1";
+        $result = mysqli_query($conn, $query);
+        if($result){
+          echo mysqli_num_rows($result);
+        }
       } ?>);">
     <div class="container">
       <form action="index.php" method="post" id="imageInfo">
